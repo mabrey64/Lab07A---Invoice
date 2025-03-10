@@ -11,7 +11,7 @@ class InvoiceTest
     @BeforeEach
     void SetUp()
     {
-        i1 = new Invoice("1", "Will's Random Emporium 123 Main St.");
+        i1 = new Invoice("1", "Will's Random Emporium 123 Main St.", new LineItem[0], 0.0);
 
         Product p1 = new Product( "Widget", 10.0);
         Product p2 = new Product( "Gadget", 20.0);
@@ -129,5 +129,11 @@ class InvoiceTest
         assertEquals("Will's Random Emporium 123 Main St.", i1.getCustomerAddress());
     }
 
+    @Test
+    void testSetCustomerAddress()
+    {
+        i1.setCustomerAddress("Will's Random Emporium 456 Main St.");
+        assertEquals("Will's Random Emporium 456 Main St.", i1.getCustomerAddress());
+    }
 
 }

@@ -5,12 +5,12 @@ public class Invoice
     private String title;
     private String customerAddress;
 
-    public Invoice(String title, String customerAddress)
+    public Invoice(String title, String customerAddress, LineItem[] lineItems, double invoiceTotal)
     {
         this.title = title;
         this.customerAddress = customerAddress;
-        this.lineItems = new LineItem[0];
-        this.invoiceTotal = 0;
+        this.lineItems = lineItems;
+        this.invoiceTotal = invoiceTotal;
     }
 
 
